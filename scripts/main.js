@@ -13,6 +13,7 @@ function addTable(table){
                 return "x1/" + Math.pow(2, Math.abs(v));
         }).growX().width(8.5 * 8).color(Pal.accent);
         let bm = t.button(new TextureRegionDrawable(Icon.refresh),24,() => s.setValue(s.getValue() - 1)).padLeft(6).get();
+        t.add(s).padLeft(6).minWidth(200);
         s.moved(v => {
             let t = Math.pow(2, v);
             Time.setDeltaProvider(() => Math.min(Core.graphics.getDeltaTime() * 60 * t, 3 * t));
