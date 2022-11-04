@@ -1,4 +1,5 @@
 let v = 0;
+let cols = [Pal.lancerLaser, Pal.accent, Color.valueOf("cc6eaf")];
 
 function addTable(table){
     table.table(Tex.pane, t => {
