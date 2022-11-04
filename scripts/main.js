@@ -40,9 +40,10 @@ if(!Vars.headless){
     var tc = new Table();
 
     Events.on(ClientLoadEvent, () => {
-        tc.top().left();
+        tc.bottom().left();
         addTable(tc);
         Vars.ui.hudGroup.addChild(tc);
-        if(Vars.mobile) tc.moveBy(Scl.scl(0),-100);
+        if(Vars.mobile)
+            tc.moveBy(Scl.scl(0),Scl.scl(46);
     });
 }
