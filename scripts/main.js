@@ -1,5 +1,6 @@
-let v = 0;
 let cols = [Pal.lancerLaser, Pal.accent, Color.valueOf("cc6eaf")];
+
+let v = 0;
 
 function addTable(table){
     table.table(Tex.pane, t => {
@@ -9,7 +10,7 @@ function addTable(table){
             else
                 v = 8;
             Time.setDeltaProvider(() => Math.min(Core.graphics.getDeltaTime() * 60 * Math.pow(2, v), 3 * Math.pow(2, v)));
-            l.color(Tmp.c1.lerp(cols, (v
+            l.color(Tmp.c1.lerp(cols, (v + 8) / 16));
         }).minWidth(50).get();
         
         let l = t.label(() => {
