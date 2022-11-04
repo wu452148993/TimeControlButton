@@ -5,10 +5,10 @@ let v = 0;
 function addTable(table){
     table.table(Tex.pane, t => {
         let bm = t.button(new TextureRegionDrawable(Icon.refresh), 24, () => {
-            if(v < 8)
-                v++;
+            if(v > -8)
+                v--;
             else
-                v = -8;
+                v = 8;
             Time.setDeltaProvider(() => Math.min(Core.graphics.getDeltaTime() * 60 * Math.pow(2, v), 3 * Math.pow(2, v)));
             l.color(Tmp.c1.lerp(cols, (v + 8) / 16));
         });
@@ -21,6 +21,10 @@ function addTable(table){
         }).growX().width(8.5 * 8).color(Pal.accent);
         
         let bp = t.button(new TextureRegionDrawable(Icon.refresh), 24, () => {
+            if(v < 8)
+                v++;
+            else
+                v = -8;
             if(v > -8)
                 v--;
             else
