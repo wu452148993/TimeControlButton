@@ -8,7 +8,7 @@ function addTable(table){
         s.setValue(0);
         let l = t.label(() => {
             let v = s.getValue();
-            return "2^" + v;
+            return "x2^" + v;
         }).growX().width(8.5 * 8).color(Pal.accent);
         let b = t.button(new TextureRegionDrawable(Icon.refresh), 24, () => s.setValue(0)).padLeft(6).get();
         b.getStyle().imageUpColor = Pal.accent;
