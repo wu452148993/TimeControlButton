@@ -8,15 +8,11 @@ function addTable(table){
         s.setValue(0);
         let l = t.label(() => {
             let v = s.getValue();
-            if(v >= 0){
-                return "x" + Math.pow(2, v);
-            }else{
-                return "x1/" + Math.pow(2, Math.abs(v));
-            }
+            return "x2^" + v;
         }).growX().width(8.5 * 8).color(Pal.accent);
         let b = t.button(new TextureRegionDrawable(Icon.refresh), 24, () => s.setValue(0)).padLeft(6).get();
         b.getStyle().imageUpColor = Pal.accent;
-        t.add(s).padLeft(6).minWidth(100);
+        t.add(s).padLeft(4).minWidth(100);
         s.moved(v => {
             let t = Math.pow(2, v);
             Time.setDeltaProvider(() => Math.min(Core.graphics.getDeltaTime() * 60 * t, 3 * t));
