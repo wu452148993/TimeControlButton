@@ -15,7 +15,7 @@ function addTable(table){
         
         let l = t.label(() => {
             if(v >= 0)
-                return "\nx" + Math.pow(2, v);
+                return "x" + Math.pow(2, v);
             else
                 return "x1/" + Math.pow(2, Math.abs(v));
         }).growX().width(8.5 * 8).color(Pal.accent);
