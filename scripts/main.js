@@ -4,14 +4,15 @@ function addTable(table){
     table.table(Tex.pane, t => {
         let s = new Slider(-8, 8, 1, false);
         s.setValue(0);
-        let bt = t.button(new TextureRegionDrawable(Icon.refresh),24,() => s.setValue(s.getValue() - 1));
+        let bm = t.button(new TextureRegionDrawable(Icon.refresh),24,() => s.setValue(s.getValue() - 1));
         let l = t.label(() => {
             let v = s.getValue();
-            return "x2^" + v;
+            if(v >= 0)
+                return "x" + Math.pow(2, v);
+            else
+                return "x1/" + Math.pow(2, Math.abs(v));
         }).growX().width(8.5 * 8).color(Pal.accent);
-        let b = t.button(new TextureRegionDrawable(Icon.refresh), 24, () => s.setValue(0)).padLeft(6).get();
-        b.getStyle().imageUpColor = Pal.accent;
-        t.add(s).padLeft(0).minWidth(100);
+        let bm = t.button(new TextureRegionDrawable(Icon.refresh),24,() => s.setValue(s.getValue() - 1)).padLeft(6).get();
         s.moved(v => {
             let t = Math.pow(2, v);
             Time.setDeltaProvider(() => Math.min(Core.graphics.getDeltaTime() * 60 * t, 3 * t));
