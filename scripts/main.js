@@ -25,10 +25,6 @@ function addTable(table){
                 v++;
             else
                 v = -8;
-            if(v > -8)
-                v--;
-            else
-                v = 8;
             Time.setDeltaProvider(() => Math.min(Core.graphics.getDeltaTime() * 60 * Math.pow(2, v), 3 * Math.pow(2, v)));
             l.color(Tmp.c1.lerp(cols, (v + 8) / 16));
         }).padLeft(6).get();
