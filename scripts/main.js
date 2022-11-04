@@ -45,6 +45,6 @@ if(!Vars.headless){
         tc.top().left();
         addTable(tc);
         Vars.ui.hudGroup.addChild(tc);
-        if(Vars.mobile) tc.moveBy(0, Scl.scl(1));
+        if(Vars.mobile) tc.moveBy(0, Scl.scl(-100));
     });
 }
