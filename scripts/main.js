@@ -4,7 +4,7 @@ function addTable(table){
     table.table(Tex.pane, t => {
         let s = new Slider(-8, 8, 1, false);
         s.setValue(0);
-        let bt = t.button("-",24,() => s.setValue(s.getValue() - 1));
+        let bt = t.button(new TextureRegionDrawable(Icon.refresh),24,() => s.setValue(s.getValue() - 1));
         let l = t.label(() => {
             let v = s.getValue();
             return "x2^" + v;
