@@ -4,7 +4,7 @@ let v = 0;
 
 function addTable(table){
     table.table(Tex.pane, t => {
-        let bm = t.button("-", () => {
+        let bm = t.button("<", () => {
             if(v > -8)
                 v--;
             else
@@ -20,7 +20,7 @@ function addTable(table){
                 return "x1/" + Math.pow(2, Math.abs(v));
         }).growX().width(8.5 * 8).color(Pal.accent);
         
-        let bp = t.button("+", () => {
+        let bp = t.button(">", () => {
             if(v < 8)
                 v++;
             else
