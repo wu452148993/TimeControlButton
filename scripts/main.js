@@ -1,32 +1,20 @@
 let cols = [Pal.lancerLaser, Pal.accent, Color.valueOf("cc6eaf")];
 
-let v = 0;
-
 function addTable(table){
     table.table(Tex.pane, t => {
-        let bm = t.button("-",24,() => {
-            if(v >= -8)
-                v--;
-            else
-                v = 8;
-            let time = Math.pow(2, v);
-            Time.setDeltaProvider(() => Math.min(Core.graphics.getDeltaTime() * 60 * time, 3 * time));
-            l.color(Tmp.c1.lerp(cols, (s.getValue() + 8) / 16));
-        });
-        
+        let s = new Slider(-8, 8, 1, false);
+        s.setValue(0);
+        let bt = t.button("-",24,() => s.setValue(s.getValue() - 1));
         let l = t.label(() => {
-            if(v >= 0)
-                return "x" + Math.pow(2, v);
-            return "x1/" + Math.pow(2, Math.abs(v));
+            let v = s.getValue();
+            return "x2^" + v;
         }).growX().width(8.5 * 8).color(Pal.accent);
-            
-        let bp = t.button("-",24,() => {
-            if(v <= 8)
-                v--;
-            else
-                v = -8;
-            let time = Math.pow(2, v);
-            Time.setDeltaProvider(() => Math.min(Core.graphics.getDeltaTime() * 60 * time, 3 * time));
+        let b = t.button(new TextureRegionDrawable(Icon.refresh), 24, () => s.setValue(0)).padLeft(6).get();
+        b.getStyle().imageUpColor = Pal.accent;
+        t.add(s).padLeft(0).minWidth(100);
+        s.moved(v => {
+            let t = Math.pow(2, v);
+            Time.setDeltaProvider(() => Math.min(Core.graphics.getDeltaTime() * 60 * t, 3 * t));
             l.color(Tmp.c1.lerp(cols, (s.getValue() + 8) / 16));
         });
     });
