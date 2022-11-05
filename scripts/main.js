@@ -29,6 +29,7 @@ function addTable(table){
             l.color(Tmp.c1.lerp(cols, (v + 8) / 16));
         }).minWidth(44).padLeft(6).get();
     });
+    bp.visible = false;
     table.visibility = () => {
         if(!Vars.ui.hudfrag.shown || Vars.ui.minimapfrag.shown()) return false;
         if(!Vars.mobile) return true;
