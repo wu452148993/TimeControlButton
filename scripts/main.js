@@ -13,7 +13,7 @@ function addTable(table){
                 return "x1/" + Math.pow(2, Math.abs(v));
             }
         }).growX().width(8.5 * 8).color(Pal.accent);
-        let b = t.button(new TextureRegionDrawable(Icon.refresh), 24, () => s.setValue(0));
+        let b = t.button(new TextureRegionDrawable(Icon.refresh), 24, () => s.setValue(0)).get();
         b.getStyle().imageUpColor = Pal.accent;
         t.row();
         t.add(s).width(150);
