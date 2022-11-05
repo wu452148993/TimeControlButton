@@ -1,32 +1,27 @@
+//Pink from BetaMindy
 let cols = [Pal.lancerLaser, Pal.accent, Color.valueOf("cc6eaf")];
-
-let v = 0;
 
 function addTable(table){
     table.table(Tex.pane, t => {
+        let s = new Slider(-8, 8, 1, false);
+        s.setValue(0);
         let l = t.label(() => {
-            if(v >= 0)
+            let v = s.getValue();
+            if(v >= 0){
                 return "x" + Math.pow(2, v);
-            else
+            }else{
                 return "x1/" + Math.pow(2, Math.abs(v));
+            }
         }).growX().width(8.5 * 8).color(Pal.accent);
+        let b = t.button(new TextureRegionDrawable(Icon.refresh), 24, () => s.setValue(0)).padLeft(6).get();
+        b.getStyle().imageUpColor = Pal.accent;
         t.row();
-        let bm = t.button("<", () => {
-            if(v > -8)
-                v--;
-            else
-                v = 8;
-            Time.setDeltaProvider(() => Math.min(Core.graphics.getDeltaTime() * 60 * Math.pow(2, v), 3 * Math.pow(2, v)));
-            l.color(Tmp.c1.lerp(cols, (v + 8) / 16));
-        }).width(44).get();
-        let bp = t.button(">", () => {
-            if(v < 8)
-                v++;
-            else
-                v = -8;
-            Time.setDeltaProvider(() => Math.min(Core.graphics.getDeltaTime() * 60 * Math.pow(2, v), 3 * Math.pow(2, v)));
-            l.color(Tmp.c1.lerp(cols, (v + 8) / 16));
-        }).width(44).get();
+        t.add(s).padLeft(6).minWidth(200);
+        s.moved(v => {
+            let t = Math.pow(2, v);
+            Time.setDeltaProvider(() => Math.min(Core.graphics.getDeltaTime() * 60 * t, 3 * t));
+            l.color(Tmp.c1.lerp(cols, (s.getValue() + 8) / 16));
+        });
     });
     table.visibility = () => {
         if(!Vars.ui.hudfrag.shown || Vars.ui.minimapfrag.shown()) return false;
