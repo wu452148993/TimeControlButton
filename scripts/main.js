@@ -19,7 +19,7 @@ function addTable(table){
             else
                 return "x1/" + Math.pow(2, Math.abs(v));
         }).growX().width(8.5 * 8).color(Pal.accent);
-        
+        t.row();
         let bp = t.button(">", () => {
             if(v < 8)
                 v++;
