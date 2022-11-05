@@ -4,6 +4,13 @@ let v = 0;
 
 function addTable(table){
     table.table(Tex.pane, t => {
+        let l = t.label(() => {
+            if(v >= 0)
+                return "x" + Math.pow(2, v);
+            else
+                return "x1/" + Math.pow(2, Math.abs(v));
+        }).growX().width(8.5 * 8).color(Pal.accent);
+        t.row();
         let bm = t.button("<", () => {
             if(v > -8)
                 v--;
@@ -12,14 +19,6 @@ function addTable(table){
             Time.setDeltaProvider(() => Math.min(Core.graphics.getDeltaTime() * 60 * Math.pow(2, v), 3 * Math.pow(2, v)));
             l.color(Tmp.c1.lerp(cols, (v + 8) / 16));
         }).minWidth(44).get();
-        
-        let l = t.label(() => {
-            if(v >= 0)
-                return "x" + Math.pow(2, v);
-            else
-                return "x1/" + Math.pow(2, Math.abs(v));
-        }).growX().width(8.5 * 8).color(Pal.accent);
-        t.row();
         let bp = t.button(">", () => {
             if(v < 8)
                 v++;
