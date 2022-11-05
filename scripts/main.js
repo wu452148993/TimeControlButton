@@ -25,7 +25,7 @@ function addTable(table){
                 v = -8;
             Time.setDeltaProvider(() => Math.min(Core.graphics.getDeltaTime() * 60 * Math.pow(2, v), 3 * Math.pow(2, v)));
             l.color(Tmp.c1.lerp(cols, (v + 8) / 16));
-        }).width(44).get();
+        }).padLeft(6).width(44).get();
     });
     table.visibility = () => {
         if(!Vars.ui.hudfrag.shown || Vars.ui.minimapfrag.shown()) return false;
