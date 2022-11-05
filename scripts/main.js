@@ -16,7 +16,7 @@ function addTable(table){
         let b = t.button(new TextureRegionDrawable(Icon.refresh), 24, () => s.setValue(0)).padLeft(6).get();
         b.getStyle().imageUpColor = Pal.accent;
         t.row();
-        t.add(s).padLeft(6).minWidth(200);
+        t.add(s).width(150);
         s.moved(v => {
             let t = Math.pow(2, v);
             Time.setDeltaProvider(() => Math.min(Core.graphics.getDeltaTime() * 60 * t, 3 * t));
