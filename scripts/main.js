@@ -18,7 +18,7 @@ function addTable(table){
                 v = 8;
             Time.setDeltaProvider(() => Math.min(Core.graphics.getDeltaTime() * 60 * Math.pow(2, v), 3 * Math.pow(2, v)));
             l.color(Tmp.c1.lerp(cols, (v + 8) / 16));
-        }).minWidth(44).get();
+        }).width(44).get();
         let bp = t.button(">", () => {
             if(v < 8)
                 v++;
@@ -26,7 +26,7 @@ function addTable(table){
                 v = -8;
             Time.setDeltaProvider(() => Math.min(Core.graphics.getDeltaTime() * 60 * Math.pow(2, v), 3 * Math.pow(2, v)));
             l.color(Tmp.c1.lerp(cols, (v + 8) / 16));
-        }).minWidth(44).get();
+        }).width(44).get();
     });
     table.visibility = () => {
         if(!Vars.ui.hudfrag.shown || Vars.ui.minimapfrag.shown()) return false;
