@@ -5,12 +5,12 @@ let v = 0;
 function addTable(table){
     table.table(Tex.pane, t => {
         let bm = t.button("<", () => {
-            if(v > -8)
+            if(v > -9)
                 v--;
             else
-                v = 8;
+                v = 9;
             Time.setDeltaProvider(() => Math.min(Core.graphics.getDeltaTime() * 60 * Math.pow(2, v), 3 * Math.pow(2, v)));
-            l.color(Tmp.c1.lerp(cols, (v + 8) / 16));
+            l.color(Tmp.c1.lerp(cols, (v + 9) / 16));
         }).width(44).get();
         let l = t.label(() => {
             if(v >= 0)
@@ -19,12 +19,12 @@ function addTable(table){
                 return "x1/" + Math.pow(2, Math.abs(v));
         }).growX().width(8.5 * 8).color(Pal.accent);
         let bp = t.button(">", () => {
-            if(v < 8)
+            if(v < 9)
                 v++;
             else
-                v = -8;
+                v = -9;
             Time.setDeltaProvider(() => Math.min(Core.graphics.getDeltaTime() * 60 * Math.pow(2, v), 3 * Math.pow(2, v)));
-            l.color(Tmp.c1.lerp(cols, (v + 8) / 16));
+            l.color(Tmp.c1.lerp(cols, (v + 9) / 16));
         }).padLeft(6).width(44).get();
     });
     table.visibility = () => {
