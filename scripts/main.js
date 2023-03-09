@@ -8,7 +8,7 @@ function addTable(table){
             if(v > -9)
                 v--;
             else
-                v = 9;
+                v = 13;
             Time.setDeltaProvider(() => Math.min(Core.graphics.getDeltaTime() * 60 * Math.pow(2, v), 3 * Math.pow(2, v)));
             l.color(Tmp.c1.lerp(cols, (v + 9) / 16));
         }).width(44).get();
@@ -19,7 +19,7 @@ function addTable(table){
                 return "x1/" + Math.pow(2, Math.abs(v));
         }).growX().width(8.5 * 8).color(Pal.accent);
         let bp = t.button(">", () => {
-            if(v < 9)
+            if(v < 13)
                 v++;
             else
                 v = -9;
