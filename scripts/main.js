@@ -25,12 +25,12 @@ function addTable(table){
                 v = -9;
             Time.setDeltaProvider(() => Math.min(Core.graphics.getDeltaTime() * 60 * Math.pow(2, v), 3 * Math.pow(2, v)));
             l.color(Tmp.c1.lerp(cols, (v + 9) / 22));
-        }).width(44).get();
+        }).padLeft(6).width(44).get();
         let reset = t.button("1", () => {
             v = 0;
             Time.setDeltaProvider(() => Math.min(Core.graphics.getDeltaTime() * 60 * Math.pow(2, v), 3 * Math.pow(2, v)));
             l.color(Tmp.c1.lerp(cols, (v + 9) / 22));
-        }).padLeft(6).width(44).get();
+        }).width(44).get();
     });
     table.visibility = () => {
         if(!Vars.ui.hudfrag.shown || Vars.ui.minimapfrag.shown()) return false;
