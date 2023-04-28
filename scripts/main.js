@@ -48,7 +48,7 @@ if(!Vars.headless){
         tc.top().left();
         addTable(tc);
         
-        Vars.ui.hudGroup.find("overlaymarker").find("minimap/position").find("position").addChild(tc);
+        Vars.ui.hudGroup.find("minimap/position").find("position").addChild(tc);
         //if(Vars.mobile) tc.moveBy(0, Scl.scl(46));
     });
 }
