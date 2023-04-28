@@ -47,7 +47,7 @@ if(!Vars.headless){
     Events.on(ClientLoadEvent, () => {
         tc.top().left();
         addTable(tc);
-        Vars.ui.hudGroup.addChild(tc);
+        Vars.ui.hudGroup.find("overlaymarker/waves/editor/waves/statustable/skip").addChild(tc);
         //if(Vars.mobile) tc.moveBy(0, Scl.scl(46));
     });
 }
