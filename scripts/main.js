@@ -45,7 +45,7 @@ if(!Vars.headless){
     var tc = new Table();
 
     Events.on(ClientLoadEvent, () => {
-        tc.top().left();
+        tc.bottom().right();
         addTable(tc);
         Vars.ui.hudGroup.find("coreinfo").addChild(tc);
         //Vars.ui.hudGroup.find("overlaymarker").find("waves/editor").find("waves").find("statustable").addChild(tc);
