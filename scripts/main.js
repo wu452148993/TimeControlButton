@@ -45,11 +45,10 @@ if(!Vars.headless){
     var tc = new Table();
 
     Events.on(ClientLoadEvent, () => {
-        tc.bottom().right();
+        tc.top().left();
         addTable(tc);
-        Vars.ui.hudGroup.addChild(tc);
-        tc.moveBy(Vars.ui.hudGroup.table().width(), Scl.scl(76));
-        //Vars.ui.hudGroup.find("overlaymarker").find("waves/editor").find("waves").find("statustable").addChild(tc);
+        
+        Vars.ui.hudGroup.find("overlaymarker").find("minimap/position").find("position").addChild(tc);
         //if(Vars.mobile) tc.moveBy(0, Scl.scl(46));
     });
 }
