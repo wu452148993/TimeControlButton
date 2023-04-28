@@ -45,7 +45,7 @@ if(!Vars.headless){
     var tc = new Table();
 
     Events.on(ClientLoadEvent, () => {
-        tc.top().left();
+        tc.top().right();
         addTable(tc);
         
         Vars.ui.hudGroup.find("minimap/position").addChild(tc);
