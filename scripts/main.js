@@ -48,7 +48,7 @@ if(!Vars.headless){
         tc.bottom().right();
         addTable(tc);
         Vars.ui.hudGroup.addChild(tc);
-        tc.moveBy(Vars.ui.hudGroups.width(), Scl.scl(150));
+        tc.moveBy(Vars.ui.hudGroups.width(), 20);
         //Vars.ui.hudGroup.find("overlaymarker").find("waves/editor").find("waves").find("statustable").addChild(tc);
         //if(Vars.mobile) tc.moveBy(0, Scl.scl(46));
     });
