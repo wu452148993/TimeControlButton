@@ -40,11 +40,9 @@ if(!Vars.headless){
         var marker = Vars.ui.hudGroup.find("overlaymarker").find("waves/editor").find("waves").find("statustable").find("status");
         marker.row();
             marker.label(() =>
-                (Core.settings.getBool("position") ? player.tileX() + "," + player.tileY() + "\n" : "") +
-                (Core.settings.getBool("mouseposition") ? "[lightgray]" + World.toTile(Core.input.mouseWorldX()) + "," + World.toTile(Core.input.mouseWorldY()) : ""))
-            .visible(() => Core.settings.getBool("position") || Core.settings.getBool("mouseposition"))
+                (Core.settings.getBool("position") ? player.tileX() + "," + player.tileY() + "\n" : "")
+            .visible(() -> Core.settings.getBool("position"))
             .touchable(Touchable.disabled)
-            .style(Styles.outlineLabel)
-            .name("position");
+            .style(Styles.outlineLabel));
     });
 }
