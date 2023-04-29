@@ -38,6 +38,6 @@ if(!Vars.headless){
     Events.on(ClientLoadEvent, () => {
         addTable(tc);
         var marker = Vars.ui.hudGroup.find("overlaymarker").find("waves/editor");
-        marker.stack(tc);
+        addTable(marker);
     });
 }
