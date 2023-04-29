@@ -1,7 +1,6 @@
 let v = 0;
 
 function addTable(table){
-    table.label("aaa");
     table.table(Tex.pane, t => {
         let bm = t.button("<", () => {
             if(v > -5)
