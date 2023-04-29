@@ -41,7 +41,7 @@ if(!Vars.headless){
         var marker = Vars.ui.hudGroup.find("minimap/position");
         marker.row()
         marker.add(tc);
-        marker.row();
-        marker.fill(t.label(() -> (Core.settings.getBool("position") ? player.tileX() + "," + player.tileY() + "\n" : "")).touchable(Touchable.disabled).style(Styles.outlineLabel).name("position"));
+        //marker.row();
+        //marker.fill(t.label(() -> (Core.settings.getBool("position") ? player.tileX() + "," + player.tileY() + "\n" : "")).touchable(Touchable.disabled).style(Styles.outlineLabel).name("position"));
     });
 }
