@@ -13,7 +13,7 @@ function addTable(table){
             else
                 return "x1/" + Math.pow(2, Math.abs(v));
         }).growX().width(8.5 * 7);
-        let ttt = t.label("aaa").growX();
+        let ttt = t.label("aaa").growX().width(8.5 * 7);
         let bp = t.button(">", () => {
             if(v < 5)
                 v++;
