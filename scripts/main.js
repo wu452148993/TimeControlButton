@@ -42,5 +42,9 @@ if(!Vars.headless){
         marker.add(tc);
         var markeraa = Vars.ui.hudGroup.find("overlaymarker");
         markeraa.row();
+        markeraa.row();
+        markeraa.row();
+        markeraa.row();
+        markeraa.row();
     });
 }
