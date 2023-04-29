@@ -34,7 +34,6 @@ function addTable(table){
 
 if(!Vars.headless){
     var tc = new Table();
-
     Events.on(ClientLoadEvent, () => {
         tc.top().right();
         addTable(tc);
@@ -42,7 +41,7 @@ if(!Vars.headless){
         var marker = Vars.ui.hudGroup.find("minimap/position");
         marker.row()
         marker.fill(tc);
-        marker.fill();
-        marker.add(t.label(() -> (Core.settings.getBool("position") ? player.tileX() + "," + player.tileY() + "\n" : "")).touchable(Touchable.disabled).style(Styles.outlineLabel).name("position"));
+        marker.row();
+        marker.fill(t.label(() -> (Core.settings.getBool("position") ? player.tileX() + "," + player.tileY() + "\n" : "")).touchable(Touchable.disabled).style(Styles.outlineLabel).name("position"));
     });
 }
