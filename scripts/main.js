@@ -7,13 +7,7 @@ function addTable(table){
                 v--;
             Time.setDeltaProvider(() => Math.min(Core.graphics.getDeltaTime() * 60 * Math.pow(2, v), 3 * Math.pow(2, v)));
         }).width(44).get();
-        let l = t.label(() => {
-            if(v >= 0)
-                return "x" + Math.pow(2, v);
-            else
-                return "x1/" + Math.pow(2, Math.abs(v));
-        }).growX().width(8.5 * 7);
-        let ttt = t.label("aaa").growX().width(8.5 * 7);
+        let l = t.label("x1").growX().width(8.5 * 7);
         let bp = t.button(">", () => {
             if(v < 5)
                 v++;
