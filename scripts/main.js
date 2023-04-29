@@ -48,7 +48,7 @@ if(!Vars.headless){
         tc.top().left();
         addTable(tc);
         
-        Vars.ui.hudGroup.find("overlaymarker").find("waves/editor").addChild(tc);
+        Vars.ui.hudGroup.find("overlaymarker").find("waves/editor").find("waves").addChild(tc);
         //if(Vars.mobile) tc.moveBy(-Scl.scl(46), -Scl.scl(46));
     });
 }
