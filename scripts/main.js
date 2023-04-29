@@ -38,9 +38,8 @@ if(!Vars.headless){
     Events.on(ClientLoadEvent, () => {
         tc.top().right();
         addTable(tc);
-        //var marker = Vars.ui.hudGroup.find("minimap/position");
-        //marker.row();
-        //marker.add(tc);
-        Vars.ui.hudGroup.find("minimap/position").find("position") = tc;
+        Vars.ui.hudGroup.find("minimap/position").find("position").remove();
+        var marker = Vars.ui.hudGroup.find("minimap/position");
+        marker.add(tc);
     });
 }
