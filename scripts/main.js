@@ -45,7 +45,7 @@ if(!Vars.headless){
     var tc = new Table();
 
     Events.on(ClientLoadEvent, () => {
-        tc.top().right();
+        tc.top().left();
         addTable(tc);
         
         Vars.ui.hudGroup.find("overlaymarker").addChild(tc);
