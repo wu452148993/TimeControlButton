@@ -39,6 +39,7 @@ if(!Vars.headless){
         addTable(tc);
         var marker = Vars.ui.hudGroup.find("overlaymarker").find("waves/editor").find("waves").find("statustable").find("status");
         marker.row();
-        marker.add(tc)
+        marker.label("hello world");
+        //marker.add(tc)
     });
 }
