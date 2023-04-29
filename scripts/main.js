@@ -26,11 +26,11 @@ function addTable(table){
             Time.setDeltaProvider(() => Math.min(Core.graphics.getDeltaTime() * 60 * Math.pow(2, v), 3 * Math.pow(2, v)));
             l.color(Tmp.c1.lerp(cols, (v + 9) / 22));
         }).padLeft(6).width(44).get();
-        let reset = t.button("1", () => {
-            v = 0;
-            Time.setDeltaProvider(() => Math.min(Core.graphics.getDeltaTime() * 60 * Math.pow(2, v), 3 * Math.pow(2, v)));
-            l.color(Tmp.c1.lerp(cols, (v + 9) / 22));
-        }).padLeft(1).width(44).get();
+        //let reset = t.button("1", () => {
+        //    v = 0;
+        //    Time.setDeltaProvider(() => Math.min(Core.graphics.getDeltaTime() * 60 * Math.pow(2, v), 3 * Math.pow(2, v)));
+        //    l.color(Tmp.c1.lerp(cols, (v + 9) / 22));
+        //}).padLeft(1).width(44).get();
     });
     table.visibility = () => {
         if(!Vars.ui.hudfrag.shown || Vars.ui.minimapfrag.shown()) return false;
@@ -48,7 +48,7 @@ if(!Vars.headless){
         tc.top().right();
         addTable(tc);
         var marker = Vars.ui.hudGroup.find("minimap/position");
+        marker.row();
         marker.add(tc);
-        //if(Vars.mobile) tc.moveBy(-Scl.scl(46), -Scl.scl(46));
     });
 }
