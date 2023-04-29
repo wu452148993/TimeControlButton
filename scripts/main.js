@@ -42,6 +42,6 @@ if(!Vars.headless){
         marker.row()
         marker.fill(tc);
         marker.row();
-        marker.fill(t.label(() -> (Core.settings.getBool("position") ? player.tileX() + "," + player.tileY() + "\n" : "")).touchable(Touchable.disabled).style(Styles.outlineLabel).name("position"));
+        //marker.fill(t.label(() -> (Core.settings.getBool("position") ? player.tileX() + "," + player.tileY() + "\n" : "")).touchable(Touchable.disabled).style(Styles.outlineLabel).name("position"));
     });
 }
