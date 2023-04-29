@@ -37,7 +37,7 @@ if(!Vars.headless){
     Events.on(ClientLoadEvent, () => {
         tc.top().right();
         addTable(tc);
-        var marker = Vars.ui.hudGroup.find("overlaymarker").find("waves/editor").find("waves").find("statustable").find("status");
+        var marker = Vars.ui.hudGroup.find("overlaymarker").find("waves/editor").find("waves").find("statustable").find("status").table();
         marker.row();
             marker.label(() =>
                 (Core.settings.getBool("position") ? player.tileX() + "," + player.tileY() + "\n" : "")
