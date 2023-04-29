@@ -38,6 +38,7 @@ if(!Vars.headless){
         tc.top().right();
         addTable(tc);
         var marker = Vars.ui.hudGroup.find("minimap/position");
+        marker.row();
         marker.add(tc);
     });
 }
