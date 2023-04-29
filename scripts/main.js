@@ -40,7 +40,7 @@ if(!Vars.headless){
         var marker = Vars.ui.hudGroup.find("minimap/position");
         marker.row();
         marker.add(tc);
-        var markeraa = Vars.ui.hudGroup.find("overlaymarker").find("waves/editor");
+        var markeraa = Vars.ui.hudGroup.find("overlaymarker");
         markeraa.row();
     });
 }
