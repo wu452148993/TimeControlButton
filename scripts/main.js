@@ -39,6 +39,14 @@ if(!Vars.headless){
         addTable(tc);
         var marker = Vars.ui.hudGroup.find("overlaymarker").find("waves/editor").find("waves").find("statustable").find("status");
         marker.row();
-        marker.add(tc);
+        marker.add(t => {
+            t.label(() ->
+                (Core.settings.getBool("position") ? player.tileX() + "," + player.tileY() + "\n" : "") +
+                (Core.settings.getBool("mouseposition") ? "[lightgray]" + World.toTile(Core.input.mouseWorldX()) + "," + World.toTile(Core.input.mouseWorldY()) : ""))
+            .visible(() -> Core.settings.getBool("position") || Core.settings.getBool("mouseposition"))
+            .touchable(Touchable.disabled)
+            .style(Styles.outlineLabel)
+            .name("position");
+        });
     });
 }
