@@ -45,10 +45,10 @@ if(!Vars.headless){
     var tc = new Table();
 
     Events.on(ClientLoadEvent, () => {
-        tc.top().left();
+        tc.top().right();
         addTable(tc);
         
-        Vars.ui.hudGroup.find("overlaymarker").find("waves/editor").find("waves").addChild(tc);
+        Vars.ui.hudGroup.find("minimap/position").find("waves/editor").find("minimap").addChild(tc);
         //if(Vars.mobile) tc.moveBy(-Scl.scl(46), -Scl.scl(46));
     });
 }
