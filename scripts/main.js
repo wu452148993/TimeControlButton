@@ -37,9 +37,8 @@ if(!Vars.headless){
     Events.on(ClientLoadEvent, () => {
         tc.top().right();
         addTable(tc);
-        var marker = Vars.ui.hudGroup.find("minimap/position");
+        var marker = Vars.ui.hudGroup.find("overlaymarker").find("waves/editor").find("waves");
         marker.row();
         marker.add(tc);
-        Vars.ui.hudGroup.find("overlaymarker").find("waves/editor").find("waves").row();
     });
 }
