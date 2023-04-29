@@ -2,7 +2,7 @@ let v = 0;
 
 function addTable(table){
     table.table(Tex.pane, t => {
-        t.label("aaa");
+        //t.label("aaa");
         let bm = t.button("<", () => {
             if(v > -5)
                 v--;
