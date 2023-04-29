@@ -49,6 +49,6 @@ if(!Vars.headless){
         addTable(tc);
         
         Vars.ui.hudGroup.find("overlaymarker").addChild(tc);
-        if(Vars.mobile) tc.moveBy(-Scl.scl(46), -Scl.scl(46));
+        //if(Vars.mobile) tc.moveBy(-Scl.scl(46), -Scl.scl(46));
     });
 }
