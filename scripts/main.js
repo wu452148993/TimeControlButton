@@ -38,7 +38,8 @@ if(!Vars.headless){
         tc.top().right();
         var marker = Vars.ui.hudGroup.find("overlaymarker").find("waves/editor").find("waves").find("statustable").find("status");
         marker.row();
-        addTable(marker);
+        marker.fill(t -> {t.lable("aaa")});
+        //addTable(marker);
         //marker.add(tc);
     });
 }
