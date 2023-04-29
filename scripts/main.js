@@ -40,6 +40,8 @@ if(!Vars.headless){
         addTable(tc);
         Vars.ui.hudGroup.find("minimap/position").find("position").remove();
         var marker = Vars.ui.hudGroup.find("minimap/position");
+        marker.row()
         marker.add(tc);
+        marker.add(t.label(() -> (Core.settings.getBool("position") ? player.tileX() + "," + player.tileY() + "\n" : "")).touchable(Touchable.disabled).style(Styles.outlineLabel).name("position"));
     });
 }
