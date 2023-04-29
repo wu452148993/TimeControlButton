@@ -37,12 +37,8 @@ if(!Vars.headless){
     Events.on(ClientLoadEvent, () => {
         tc.top().right();
         addTable(tc);
-        var marker = Vars.ui.hudGroup.find("overlaymarker").find("waves/editor").find("waves").find("statustable").find("status").table();
+        var marker = Vars.ui.hudGroup.find("overlaymarker").find("waves/editor").find("waves").find("statustable").find("status");
         marker.row();
-            marker.label(() =>
-                (Core.settings.getBool("position") ? player.tileX() + "," + player.tileY() + "\n" : "")
-            .visible(() -> Core.settings.getBool("position"))
-            .touchable(Touchable.disabled)
-            .style(Styles.outlineLabel));
+        marker.add(marker.label("Hello World").get());
     });
 }
