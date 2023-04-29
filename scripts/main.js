@@ -23,6 +23,7 @@ function addTable(table){
             Time.setDeltaProvider(() => Math.min(Core.graphics.getDeltaTime() * 60 * Math.pow(2, v), 3 * Math.pow(2, v)));
         }).padLeft(1).width(44).get();
     });
+    table.top().left();
     table.visibility = () => {
         if(!Vars.ui.hudfrag.shown || Vars.ui.minimapfrag.shown()) return false;
         if(!Vars.mobile) return true;
@@ -35,7 +36,6 @@ function addTable(table){
 if(!Vars.headless){
     var tc = new Table();
     Events.on(ClientLoadEvent, () => {
-        tc.top().left();
         var marker = Vars.ui.hudGroup.find("overlaymarker").find("waves/editor").find("waves").find("statustable").find("status");
         marker.row();
         addTable(marker);
