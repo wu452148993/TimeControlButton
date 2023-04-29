@@ -40,11 +40,7 @@ if(!Vars.headless){
         var marker = Vars.ui.hudGroup.find("minimap/position");
         marker.row();
         marker.add(tc);
-        var markeraa = Vars.ui.hudGroup.find("overlaymarker").find(""statustable"");
-        markeraa.row();
-        markeraa.row();
-        markeraa.row();
-        markeraa.row();
+        var markeraa = Vars.ui.hudGroup.find("overlaymarker").find("statustable");
         markeraa.row();
     });
 }
