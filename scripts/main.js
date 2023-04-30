@@ -1,4 +1,4 @@
-let v = 0;
+ㅕlet v = 0;
 
 function addTable(table){
     table.table(Tex.pane, t => {
@@ -37,6 +37,7 @@ if(!Vars.headless){
     Events.on(ClientLoadEvent, () => {
         addTable(tc);
         var marker = Vars.ui.hudGroup.find("overlaymarker").find("waves/editor").find("waves").find("status");
+        marker.remove();
         addTable(marker);
     });
 }
