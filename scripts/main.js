@@ -1,4 +1,4 @@
-ㅕlet v = 0;
+let v = 0;
 
 function addTable(table){
     table.table(Tex.pane, t => {
