@@ -1,5 +1,5 @@
 let v = 0;
-let aa = 0;
+
 function addTable(table){
     table.table(Tex.pane, t => {
         let bm = t.button("<", () => {
@@ -19,9 +19,8 @@ function addTable(table){
             Time.setDeltaProvider(() => Math.min(Core.graphics.getDeltaTime() * 60 * Math.pow(2, v), 3 * Math.pow(2, v)));
         }).padLeft(6).width(44).get();
         let reset = t.button("1", () => {
-            aa++;
-            //v = 0;
-            //Time.setDeltaProvider(() => Math.min(Core.graphics.getDeltaTime() * 60 * Math.pow(2, v), 3 * Math.pow(2, v)));
+            v = 0;
+            Time.setDeltaProvider(() => Math.min(Core.graphics.getDeltaTime() * 60 * Math.pow(2, v), 3 * Math.pow(2, v)));
         }).padLeft(1).width(44).get();
     });
     table.visibility = () => {
