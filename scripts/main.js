@@ -1,7 +1,7 @@
 let v = 0;
 let aa = 0;
 function addTable(table){
-    table.table(Tex.clear, t => {
+    table.table(Tex.pane, t => {
         let bm = t.button("<", () => {
             if(v > -5)
                 v--;
@@ -37,7 +37,7 @@ if(!Vars.headless){
     var tc = new Table();
     Events.on(ClientLoadEvent, () => {
         addTable(tc);
-        var marker = Vars.ui.hudGroup.find("overlaymarker").find("waves/editor").find("waves").getChildren().get(aa);
+        var marker = Vars.ui.hudGroup.find("overlaymarker").find("waves/editor").find("waves");
         marker.row();
         marker.add(tc);
     });
