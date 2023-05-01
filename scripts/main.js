@@ -37,9 +37,9 @@ if(!Vars.headless){
     Events.on(ClientLoadEvent, () => {
         addTable(tc);
         var marker = Vars.ui.hudGroup.find("overlaymarker").find("waves/editor").find("waves");
-        //marker.row();
-        marker.button("Button", () => {});
-        //marker.add(tc);
+        marker.row();
+        //marker.button("Button", () => {});
+        marker.add(tc);
         //addTable(marker);
     });
 }
