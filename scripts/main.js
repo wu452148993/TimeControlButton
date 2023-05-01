@@ -1,5 +1,5 @@
 let v = 0;
-
+let aa = 0;
 function addTable(table){
     table.table(Tex.clear, t => {
         let bm = t.button("<", () => {
@@ -19,8 +19,9 @@ function addTable(table){
             Time.setDeltaProvider(() => Math.min(Core.graphics.getDeltaTime() * 60 * Math.pow(2, v), 3 * Math.pow(2, v)));
         }).padLeft(6).width(44).get();
         let reset = t.button("1", () => {
-            v = 0;
-            Time.setDeltaProvider(() => Math.min(Core.graphics.getDeltaTime() * 60 * Math.pow(2, v), 3 * Math.pow(2, v)));
+            aa++;
+            //v = 0;
+            //Time.setDeltaProvider(() => Math.min(Core.graphics.getDeltaTime() * 60 * Math.pow(2, v), 3 * Math.pow(2, v)));
         }).padLeft(1).width(44).get();
     });
     table.visibility = () => {
@@ -36,7 +37,7 @@ if(!Vars.headless){
     var tc = new Table();
     Events.on(ClientLoadEvent, () => {
         addTable(tc);
-        var marker = Vars.ui.hudGroup.find("overlaymarker").find("waves/editor").find("waves").getChildren().get(1);
+        var marker = Vars.ui.hudGroup.find("overlaymarker").find("waves/editor").find("waves").getChildren().get(aa);
         marker.row();
         marker.add(tc);
     });
