@@ -27,8 +27,8 @@ function addTable(table){
         if(!Vars.ui.hudfrag.shown || Vars.ui.minimapfrag.shown()) return false;
         if(!Vars.mobile) return true;
         
-        let input = Vars.control.input;
-        return input.lastSchematic == null || input.selectPlans.isEmpty();
+        //let input = Vars.control.input;
+        return Vars.control.input.lastSchematic == null || Vars.control.input.selectPlans.isEmpty();
     };
 }
 
