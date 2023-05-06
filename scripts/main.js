@@ -40,8 +40,8 @@ if(!Vars.headless){
         //let marker = 0;//Vars.ui.hudGroup.find("overlaymarker").find("waves/editor").find("waves").find("infotable");
         //marker.row();
         //marker.add(tc);
-        //Vars.ui.hudGroup.find("overlaymarker").find("waves/editor").find("waves").find("infotable").row();
-        //Vars.ui.hudGroup.find("overlaymarker").find("waves/editor").find("waves").find("infotable").add(tc);
+        Vars.ui.hudGroup.find("overlaymarker").find("waves/editor").find("waves").find("infotable").row();
+        Vars.ui.hudGroup.find("overlaymarker").find("waves/editor").find("waves").find("infotable").add(tc);
         
     });
 }
