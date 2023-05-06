@@ -37,8 +37,11 @@ if(!Vars.headless){
     Events.on(ClientLoadEvent, () => {
         addTable(tc);
         //console.log("1111111111111");
-        let marker = 0;//Vars.ui.hudGroup.find("overlaymarker").find("waves/editor").find("waves").find("infotable");
+        //let marker = 0;//Vars.ui.hudGroup.find("overlaymarker").find("waves/editor").find("waves").find("infotable");
         //marker.row();
         //marker.add(tc);
+        Vars.ui.hudGroup.find("overlaymarker").find("waves/editor").find("waves").find("infotable").row();
+        Vars.ui.hudGroup.find("overlaymarker").find("waves/editor").find("waves").find("infotable").add(tc);
+        
     });
 }
