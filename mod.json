@@ -1,9 +1,9 @@
 {
 	"name": "time-control-button",
 	"displayName": "Time Control Button",
-	"author": "kozem2133",
+	"author": "-",
 	"description": "Speeds up or slows down Mindustry.\nYou can change the game speed x1/32 to x32.",
-	"version": "0.2.1",
+	"version": "0.2.2",
 	"hidden": true,
 	"minGameVersion": 141
 }
